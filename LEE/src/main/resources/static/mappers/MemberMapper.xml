@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.member.Member">
+	<resultMap type="com.example.demo.member.Member" id="member">
+		<result property="id" column="id" />
+		<result property="password" column="password" />
+		<result property="name" column="name" />
+		<result property="email" column="email" />
+	</resultMap>
+
+	<insert id="insert" parameterType="com.example.demo.member.Member">
+		insert into memberLee values(#{id}, #{password}, #{name}, #{email})
+	</insert>
+
+	<insert id="addMember" parameterType="com.example.demo.member.Member">
+		insert into memberLee values(#{id}, #{password}, #{name}, #{email})
+	</insert>
+	
+	<select id="getMember" parameterType="String">
+	select * from memberLee where id=#{id}
+	</select>
+	
+</mapper>
